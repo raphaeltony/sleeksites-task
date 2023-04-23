@@ -162,6 +162,13 @@
       <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+         {{ message }}
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
 
 
     <button class="w-100 btn btn-lg btn-primary" type="submit" value="Log in">Sign in</button>
