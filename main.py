@@ -21,6 +21,12 @@ def do_admin_login():
         flash('wrong password!')
     return home()
 
+@app.route('/logout', methods=['POST'])
+def do_admin_logout():
+    session['logged_in'] = False
+    return home()
+
+
 if __name__ == "__main__":
     
     app.run(debug=True,host='0.0.0.0', port=5000)
